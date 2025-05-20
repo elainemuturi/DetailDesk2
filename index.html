@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Detail Desk - Virtual assistant services for professionals, nonprofits, and creatives. Delegate smarter, create more, stress less." />
+  <meta name="keywords" content="Virtual Assistant, Academic Research, Grant Writing, Admin Support, Content Creation, VA Kenya" />
+  <meta name="author" content="Elaine" />
+  <title>The Detail Desk | Your Task, Handled with Precision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    header .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0d1b2a;
+      flex-shrink: 0;
+    }
+    nav {
+      flex-grow: 1;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+    nav ul li {
+      white-space: nowrap;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #0d1b2a;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #ffcc00;
+      outline: none;
+    }
+    .cta-button {
+      background-color: #0077b6;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #005f8a;
+    }
+    .hero {
+      background-color: #0d1b2a;
+      color: #fff;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      border-radius: 0 0 1rem 1rem;
+    }
+    .hero-text {
+      max-width: 600px;
+      flex-shrink: 1;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .hero .tagline {
+      font-style: normal;
+      font-variant: small-caps;
+      font-size: 1rem;
+      color: #ffc300;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .hero-image img {
+      max-width: 300px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      width: 100%;
+      height: auto;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-align: center;
+      flex-shrink: 0;
+      flex-grow: 1;
+      min-width: 260px;
+    }
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .card h3 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #0d1b2a;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .testimonials {
+      padding: 2rem;
+      background-color: #fff;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .testimonial-slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .testimonial-slide.active {
+      display: flex;
+    }
+    .testimonial-slide img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    .testimonial-slide p {
+      font-style: italic;
+      color: #333;
+      max-width: 500px;
+    }
+    .testimonial-controls {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .testimonial-controls button {
+      border: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .testimonial-controls button.active,
+    .testimonial-controls button:hover {
+      background-color: #0077b6;
+    }
+    .contact {
+      padding: 2rem;
+      background-color: #fff;
+      text-align: center;
+      max-width: 600px;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .contact-form button {
+      background-color: #0077b6;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #005f8a;
+    }
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 4rem;
+    }
+    footer a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-image img {
+        max-width: 100%;
+      }
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="logo">The Detail Desk</div>
+      <div class="subtitle">Your Task, Handled with Precision</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+    </nav>
+    <button class="cta-button">Book a Free Call</button>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Focus on the Big Picture. I'll Handle the Details.</h1>
+      <p class="tagline">Delegate smarter, <span style="font-variant: small-caps;">create more</span>, stress less.</p>
+      <p>Virtual assistant services for professionals, nonprofits, and creative entrepreneurs.</p>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/300x200" alt="Desk Illustration" />
+    </div>
+  </section>
+
+  <section class="cards" id="services">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Academic Research" />
+      <h3>Academic Research and Writing</h3>
+      <p>Tutoring, Scholarship Applications, and Standardized Test Prep</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Grant Writing" />
+      <h3>Grant & Proposal Writing</h3>
+      <p>For nonprofits and side hustles with impact-driven goals</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Admin Support" />
+      <h3>Administrative VA Support</h3>
+      <p>Inbox and Calendar Management, Scheduling, Data Entry, Bookkeeping</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Business Support" />
+      <h3>Business Support</h3>
+      <p>Lead Generation, Content Support, Social Media, Scripts, SEO</p>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials" aria-label="Client testimonials slideshow">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-slide active">
+      <img src="https://via.placeholder.com/80" alt="Client photo" />
+      <p>"Elaine helped me win a scholarship I didn’t think was possible. Highly detailed and supportive!"</p>
+    </div>
+    <div class="testimonial-slide">
+      <img src="https://via.placeholder.com/80" alt="Client photo" />
+      <p>"We outsourced our admin to The Detail Desk and never looked back. Efficiency has doubled!"</p>
+    </div>
+    <div class="testimonial-controls" role="tablist" aria-label="Testimonial navigation">
+      <button aria-selected="true" role="tab" aria-controls="testimonial1"></button>
+      <button aria-selected="false" role="tab" aria-controls="testimonial2"></button>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form" novalidate>
+      <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
+      <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
+      <textarea name="message" rows="4" placeholder="Your Message" required aria-label="Your Message"></textarea>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+    <p>Email: <a href="mailto:info@thedetaildesk.com">info@thedetaildesk.com</a></p>
+    <p>Book a 15 min call: <a href="https://calendly.com/elaine-va/15min" target="_blank" rel="noopener noreferrer">Calendly Link</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 The Detail Desk | Built with care and precision by Elaine
+  </footer>
+
+  <script>
+    // Testimonial slideshow functionality
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const buttons = document.querySelectorAll('.testimonial-controls button');
+
+    buttons.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle('active', idx === i);
+          buttons[idx].setAttribute('aria-selected', idx === i);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
